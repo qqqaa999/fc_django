@@ -53,3 +53,20 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
     * View : 유저와 어플리케이션 간의 인터페이스 (화면 요청에 대한 결과물을 보여줌)
     * Controller : 모델과 뷰를 이어주는 역할 (유저의 입력과 요청에 관찬 처리를 Model에 의뢰함)
     ![MVC_이미지](https://blog.kakaocdn.net/dn/dIShYR/btq6cTveSuR/a4SOarsnoUf7JqF4adMzW0/tfile.svg)
+#### MVC패턴의 특징
+* 장점 : MVC패턴은 각각의 구성 요소가 분리되어 본연의 역할에만 충실한 구조임 그래서 유연성이 높고 유지보수가 용이하며 개발자와 디자이너 작업 영역을 분리할 수 있음
+* 단점 : 프로젝트 규모가 클수록 컨트롤러가 비대화 되고 모델과 뷰의 의존성을 완벽히 분리 할 수 없기에 유지보수가 점점 어려워짐 이를 보안한 디자인 패턴 (MVP, MVVM 등등)
+
+#### MTV패턴
+* Django는 MVC(Model-View_Controller)를 기반으로 한 프레임워크임, MVC패턴을 Django에서는 MTV(Model-Template-View)패턴이라고 부르기도함
+*   Django에서는 MTV에 URL을 추가함 
+*   1. User가 URL로 요청을 보냄
+*   2. URLConf를 통해 URL과 매핑된 View를 호출
+*   3. View는 요청에 따라 적절한 로직을 수행하며 이 과정에서 Model에 CRUD를 지시함
+*   4. Model은 ORM을 통해 DB와 소통하며 CRUD를 수행함
+*   5. View는 지정된 Template를 랜더링 함
+*   6. User에게 응답함
+
+    ![MTV_이미지](https://1.bp.blogspot.com/-upCjCNPicRc/XjfZTiPxLNI/AAAAAAAACkQ/lXvlwoCQQPk43nEkNL1WSSq9gQgltMe2wCLcBGAsYHQ/s1600/2.png)
+
+다음 ORM과 CRUD
