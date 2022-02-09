@@ -58,7 +58,7 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 * 단점 : 프로젝트 규모가 클수록 컨트롤러가 비대화 되고 모델과 뷰의 의존성을 완벽히 분리 할 수 없기에 유지보수가 점점 어려워짐 이를 보안한 디자인 패턴 (MVP, MVVM 등등)
 
 #### MTV패턴
-* Django는 MVC(Model-View_Controller)를 기반으로 한 프레임워크임, MVC패턴을 Django에서는 MTV(Model-Template-View)패턴이라고 부르기도함
+* Django는 MVC(Model-View_Controller)를 기반으로 한 프레임워크임, MVC패턴을 Django에서는 MTV(Model-Template-View)패턴이라고 부르기도함 <Spring에서는 MVC로 부름>
 *   Django에서는 MTV에 URL을 추가함 
 *   1. User가 URL로 요청을 보냄
 *   2. URLConf를 통해 URL과 매핑된 View를 호출
