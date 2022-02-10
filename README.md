@@ -69,4 +69,14 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 
     ![MTV_이미지](https://1.bp.blogspot.com/-upCjCNPicRc/XjfZTiPxLNI/AAAAAAAACkQ/lXvlwoCQQPk43nEkNL1WSSq9gQgltMe2wCLcBGAsYHQ/s1600/2.png)
 
-다음 ORM과 CRUD
+## CRUD
+* CRUD는 대부분의 ***컴퓨터 소프트웨어***가 가지는 기본적인 데이터 처리 기능인 Create(생성), Read(읽기), Update(갱신), Delete(삭제)룰 묶어서 일컽는 말임.
+* ***사용자 인터페이스***가 갖추어야 할 기능(정보의 참조/검색/갱신)을 가리키는 용어로서도 사용됨.
+
+*   이름 | SQL | 사용자 인터페이스 EX
+    * C : Create (생성) | INSERT | 커뮤니티 또는 게시판의 글 쓰기
+    * R : Read   (읽기) | SELECT | 커뮤니티 또는 게시판의 글 읽기
+    * U : Update (갱신) | UPDATE | 커뮤니티 또는 게시판의 글 편집
+    * D : Delete (삭제) | DELETE | 커뮤니티 또는 게시판의 글 삭제
+
+## ORM(Object Relational Mapping)
