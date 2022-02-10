@@ -80,3 +80,4 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
     * D : Delete (삭제) | DELETE | 커뮤니티 또는 게시판의 글 삭제
 
 ## ORM(Object Relational Mapping)
+* 장고에서 ORM이란 무엇인가? ORM의 장정과 단점은 무엇인가? 예시는 무엇인가?
