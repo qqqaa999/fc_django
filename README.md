@@ -81,3 +81,8 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 
 ## ORM(Object Relational Mapping)
 * 장고에서 ORM이란 무엇인가? ORM의 장정과 단점은 무엇인가? 예시는 무엇인가?
+* ORM이란 : Object-Relational-Mapping의 약자로 객체와 관계형 데이터베이스의 데이터를 매핑해주는 것을 의미함.
+    * 객체지향 프로그래밍(OOP)은 Class 사용 관계형 데이터베이스(RDBMS)에서는 테이블을 사용함.
+    * 객체지향 프로그래밍은 필드와 메서드등을 묶어서 캡슐화하고 ***사용하는것이*** 목표, 관계형 데이터베이스에서는 데이터를 잘 정규화해서 ***보관하는것이*** 목표
+* 기능 : 객체간의 관계를 바탕으로 SQL을 자동 생성하여 SQL 퀴리문 없이도 데이터베이스의 데이터를 사용가능하게 함.
+    ![ORM_이미지](https://yunsikus.github.io/assets/img/post_img/django_orm1.jpg)
