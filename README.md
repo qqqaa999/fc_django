@@ -94,4 +94,15 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
     * 재사용 및 유지보수가 용이하고 매핑정보가 명확하며 ERD 의존성이 낮음
     * DBMS(DataBase Management System) 종속성이 낮음
 
-참고
+* 단점
+    * 완벽한 ORM만으로는 서비스 구현이 어려움, 사용하기는 편하나 설계는 신중히 해야함.
+    * 프로젝트 복잡성이 커질 경우 난이도가 높아짐.
+    * 잘못 구현하게 되면 속도가 저하되고 일관성이 없어질 수 있음
+
+* 예시 : 회원에 나이정보를 추가하려고 함
+    * ORM : Member 클래스에 age를 추가
+    *  Without ORM : Insert, Select, Update등 관련된 모든 퀴리에 age 정보를 추가
+
+* 쿼리셋이란
+
+참고 : https://yunsikus.github.io/development/django/2021/05/19/Django_ORM/
