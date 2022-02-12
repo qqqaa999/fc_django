@@ -104,5 +104,8 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
     *  Without ORM : Insert, Select, Update등 관련된 모든 퀴리에 age 정보를 추가
 
 * 쿼리셋이란
+    * 전달받은 모델의 객체 목록
+    * 데이터베이스로부터 데이터를 읽고 필터를 걸거나 정렬등을 할 수 있음
+    * 리스트와 구조는 같지만 파이썬 기본 자료구조가 아니기에 읽고 쓰기 위해서는 자료형 변환을 해줘야함. 퀴리셋은 데이터베이스의 여러 레코드(row)를 나타냄
 
 참고 : https://yunsikus.github.io/development/django/2021/05/19/Django_ORM/
