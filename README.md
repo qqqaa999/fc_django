@@ -128,6 +128,7 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 ## CDN(Content Delivery Network)
 
 * CDN이란 지리적으로 분산된 여러 개의 서버 이며, 지리적 제약 없이 전 세계 사용자들에게 빠르게 콘텐츠를 전송하는 기술임.
+    ![CDN_이미지](https://wp-assets.highcharts.com/www-highcharts-com/blog/wp-content/uploads/2012/11/05143244/how-cdn-works.png)
     * CDN을 마치 ATM처럼 생각하면 이해하기 쉬움
 * 원리 : 프록시 서버에서 출발한 웹 캐시의 클라우드화임, 전세계 각지에 캐시 서버를 엄청 많이 설치하고 사용자가 접속하면 가장 가까이 있는 캐시 서버가 정보를 보냄 
     * 캐시(Cache)란 : 자주 사용하는 데이터나 값을 미리 복사해 놓는 임시 장소를 말하며, 캐시는 저장 공간이 작고 비용이 비싼 대신 빠른 성능을 제공함. 
