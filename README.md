@@ -84,16 +84,6 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 
     ![MTV_이미지](https://1.bp.blogspot.com/-upCjCNPicRc/XjfZTiPxLNI/AAAAAAAACkQ/lXvlwoCQQPk43nEkNL1WSSq9gQgltMe2wCLcBGAsYHQ/s1600/2.png)
 
-## CRUD
-* CRUD는 대부분의 ***컴퓨터 소프트웨어***가 가지는 기본적인 데이터 처리 기능인 Create(생성), Read(읽기), Update(갱신), Delete(삭제)룰 묶어서 일컽는 말임.
-* ***사용자 인터페이스***가 갖추어야 할 기능(정보의 참조/검색/갱신)을 가리키는 용어로서도 사용됨.
-
-*   이름 | SQL | 사용자 인터페이스 EX
-    * C : Create (생성) | INSERT | 커뮤니티 또는 게시판의 글 쓰기
-    * R : Read   (읽기) | SELECT | 커뮤니티 또는 게시판의 글 읽기
-    * U : Update (갱신) | UPDATE | 커뮤니티 또는 게시판의 글 편집
-    * D : Delete (삭제) | DELETE | 커뮤니티 또는 게시판의 글 삭제
-
 ## ORM(Object Relational Mapping)
 * 장고에서 ORM이란 무엇인가? ORM의 장정과 단점은 무엇인가? 예시는 무엇인가?
 * ORM이란 : Object-Relational-Mapping의 약자로 객체와 관계형 데이터베이스의 데이터를 매핑해주는 것을 의미함.
@@ -125,6 +115,16 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
 
 참고 : <https://yunsikus.github.io/development/django/2021/05/19/Django_ORM/>
 
+## DB CRUD
+* CRUD는 대부분의 ***컴퓨터 소프트웨어***가 가지는 기본적인 데이터 처리 기능인 Create(생성), Read(읽기), Update(갱신), Delete(삭제)룰 묶어서 일컽는 말임.
+* ***사용자 인터페이스***가 갖추어야 할 기능(정보의 참조/검색/갱신)을 가리키는 용어로서도 사용됨.
+
+*   이름 | SQL | 사용자 인터페이스 EX
+    * C : Create (생성) | INSERT | 커뮤니티 또는 게시판의 글 쓰기
+    * R : Read   (읽기) | SELECT | 커뮤니티 또는 게시판의 글 읽기
+    * U : Update (갱신) | UPDATE | 커뮤니티 또는 게시판의 글 편집
+    * D : Delete (삭제) | DELETE | 커뮤니티 또는 게시판의 글 삭제
+
 ## CDN(Content Delivery Network)
 
 * CDN이란 지리적으로 분산된 여러 개의 서버 이며, 지리적 제약 없이 전 세계 사용자들에게 빠르게 콘텐츠를 전송하는 기술임.
@@ -146,3 +146,13 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
         3. ISP에 장애가 발생해도 다른 ISP에 있는 캐시 서버에서 데이터를 전송하므로 전송 중단이 발생하지 않지만, 이렇게 되려면 여러 국가에 분산된 다수의 캐시 서버가 필요함.
     2. 트래픽 절약
         1. CDN을 쓰면 트래픽이 줄어들기 때문에 서버 유지 비용도 저절로 감소됨 원리는 caching과 비슷하며 자주 쓰이는 파일들을 중간중간에 replica로 만들어 놓아서 클라이언트가 replica에 접근할 수 있게 함
+
+## Database Field
+* DB에서 Field란 ***세로 방향으로 표시된 열, column을 말함.*** 필드는 DB Table에서 가로로 표시한 레코드(Record)에 대한 개별적인 속성값을 표시함.
+* DB에서 Record란 ***가로 방향으로 표시된 행, row을 말함.***
+
+## 다대다(M:N)관계
+* 두 개의 테이블이 서로의 레코드(Record)에 대해서 여러개로 연관 되어 있는 상태를 다대다(M:N)관계라고 함.
+* 단점
+    * 데이터의 무결성을 위반하게 되며, 데이터의 삭제와 추가, 수정을 할 때 많은 문제가 발생함. 하지만 DB 설계를 제대로 한다면 편할것 같음
+* ERD란?
