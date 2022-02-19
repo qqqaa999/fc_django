@@ -197,3 +197,9 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
             * 행위 엔티티 : 2개 이상의 엔티티로부터 발생 됨(주문 내용, 취소 내용 등)
 * ERD란?
     * Entity Relationship Diagram (ERD)는 시스템의 엔티티들이 무엇이 있는지 어떤 관계가 있는지를 나타내는 다이어그램임.
+    * 구체적으로
+        1. 데이터 모델은 데이터베이스에 독립적임
+        2. 데이터 모델링은 건축물의 설계도를 그리는 작업과 같음
+        3. 관계형 데이터 모델은 여러 가지 데이터 모델 중 가정 널리 사용되는 모델이며, 실체(Entity), 속성(Attribute), 관계(Relationship)로 구성된 ER diageram으로 표현 됨
+        4. Entity는 하나 이상의 식별자(UIDL Unique ldentifier)를 가져야 하며, UID가 없다면 Entity가 아님
+        5. ER diagram 작성 시, 관계를 표현할 때에는 어떤 entity가 "주"인가를 잘 따져서 표현해야함
