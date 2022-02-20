@@ -203,3 +203,27 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
         3. 관계형 데이터 모델은 여러 가지 데이터 모델 중 가정 널리 사용되는 모델이며, 실체(Entity), 속성(Attribute), 관계(Relationship)로 구성된 ER diageram으로 표현 됨
         4. Entity는 하나 이상의 식별자(UIDL Unique ldentifier)를 가져야 하며, UID가 없다면 Entity가 아님
         5. ER diagram 작성 시, 관계를 표현할 때에는 어떤 entity가 "주"인가를 잘 따져서 표현해야함
+
+## Decorator
+* 함수를 Wrapping 즉, 어떤 함수를 받아 명령을 추가한 뒤 이를 다시 함수의 형태로 반환하는 함수(말 그대로 다른 함수를 꾸며주는 함수임)
+
+``` python
+@login_required
+def test_func1():
+    print('Do something1')
+
+@login_required
+def test_func2():
+    print('Do something2')
+
+def login_required(func): '''데코레이터'''
+    def wrap():
+        if user in None:
+            return redirect('/login')
+        return func()
+    return wrap
+''' 이런식으로 작성 함
+    login_required을 보면 함수를 인자로 받고 wrap안에 있는 기능을 실행함
+    함수를 데코레이터에게 전달해주므로써 사실은 login_required 함수를 호출하는것
+ '''
+ ```

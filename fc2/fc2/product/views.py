@@ -3,6 +3,8 @@ from django.forms.forms import Form
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
+from django.utils.decorators import method_decorator
+from fcuser.decorators import admin_required
 from order.forms import RegisterForm as OrderForm
 from .forms import RegisterForm
 from .models import Product
@@ -12,7 +14,7 @@ class ProductList(ListView):
     model = Product
     template_name = 'product.html'
     context_object_name = 'product_list'
-
+@method_decorator(admin_required, name='dispatch')
 class ProductCreate(FormView):
     template_name = 'register_product.html'
     form_class = RegisterForm

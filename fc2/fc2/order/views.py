@@ -1,12 +1,16 @@
 from re import template
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from fcuser.decorators import login_required
 from .forms import RegisterForm
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 from .models import Order
+
 # Create your views here.
 
+@method_decorator(login_required, name='dispatch')
 class OrderCreate(FormView):
     form_class = RegisterForm
     success_url = '/product/'
@@ -20,7 +24,7 @@ class OrderCreate(FormView):
             'request': self.request
         })
         return kw
-
+@method_decorator(login_required, name='dispatch')
 class OrderList(ListView):
     template_name = 'order.html'
     context_object_name = 'order_list'
