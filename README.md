@@ -228,8 +228,8 @@ def login_required(func): '''데코레이터'''
  '''
  ```
 
- ## REST API
- #### 개념
+ ## REST 및 REST API
+ #### REST
  * REST 정의
     * Representational State Transfer의 약자이며, 자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든것을 의미함
         * 즉, 자원(resource)의 표현(representation)에 의한 상태 전달
@@ -239,4 +239,42 @@ def login_required(func): '''데코레이터'''
             1. 데이터 요청이 되는 시점에서 자원의 상태(정보)를 전달함
             2. JSON 혹은 XML를 통해 데이터를 주고 받는 것이 일반적
     * HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고 HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원(URI)에 대한 CRUD Operation을 적용하는 것을 의미함
-    
+        * CRUD 동작 예시
+            + Create : 데이터 생성(POST)
+            + Read : 데이터 조회(GET)
+            + Update : 데이터 수정(PUT)
+            + Delete : 데이터 삭제(DELETE)
+            + HEAD : 네트워크상 데이터의 header 정보 조회(HEAD)
+
+* REST 구성 요소
+    1. 자원(Resource) : HTTP URI
+    2. 자원에 대한 행위(Verb) : HTTP Method
+    3. 자원에 대한 행위의 내용(Representations) : HTTP Message Pay Load
+
+* REST 특징
+    1. Server-Client(서버-클라이언트 구조) : 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트(세션, 로그인 정보) 등을 직접 관리하는 구조이므로, 역할이 확실히 구분되고 서버와 클라이언트에서의 개발 내용이 명확해지며, 서로 간 의존성이 줄어들게 됨
+    2. Stateless(무상태) : 작업을 위한 상태정보(세션,쿠키)를 따로 저장하고 관리하지 않음
+    3. Cacheable(캐시 처리 가능) :  웹에서 사용하는 기존 인프라를 그대로 활용 가능, HTTP가 가진 캐싱 기능을 적용할 수 있음
+    4. Layered System(계층화) : REST 서버는 다중 계층으로 구성 가능하므로 보안, 로드 밸런싱, 암호화 계층을 추가하여 구조상의 유연성을 둘 수 있으며 PROXY, 게이트웨이 같은 네트워크 기반의 중간매체를 사용할 수 있음
+    5. Uniform Interface(인터페이스 일관성) : 특정 플랫폼(안드로이드, IOS 등), 특정 언어나 기술에 종속되지 않고 모든 플랫폼에서 사용가능, URI로 지정한 리소스에 대한 조작이 가능한 아키텍쳐 스타일을 의미함
+    6. self-descriptiveness(자체 표현 구조) : REST API 메세지만 보고도 쉽게 이해할 수 있는 자체 표현 구조로 되어있음
+
+* REST 장단점
+    * 장점
+        1. HTTP 프로토콜의 인프라를 그래도 사용하므로 REST API 사용을 위한 별도의 인프라를 구축할 필요가 없음
+        2. HTTP 프로토콜의 표준을 최대한 활용하여 여러 추가적인 장점을 함께 가져갈 수 있게 해줌
+        3. HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용가능
+        4. Hypermedia API의 기본을 충실히 지키면서 범용성을 보장함
+        5. REST API 메시지가 의도하는 바를 명확하게 나타내므로 의도하는 바를 쉽게 파악할 수 있음
+        6. 여러 가지 서비스 디자인에서 생길 수 있는 문제를 최소화함
+        7. 서버와 클라이언트의 역할을 명확하게 분리함
+    * 단점
+        1. 표준이 자체가 존재하지 않아 정의가 필요함
+        2. 사용할 수 있는 메소드가 4가지밖에 없음(CRUD)
+        3. HTTP Method 형태가 제한적임
+        4. 브라우저를 통해 테스트할 일이 많은 서비스라면 쉽게 고칠 수 있는 URL보다 Header 정보의 값을 처리해야 하므로 전문성이 요구됨
+        5. 구형 브라우저에서 호환이 되지 않아 지원해주지 못하는 동작이 많음 ex)익스폴로어
+
+#### REST API
+
+References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
