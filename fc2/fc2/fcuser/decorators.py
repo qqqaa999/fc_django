@@ -1,4 +1,3 @@
-import email
 from django.shortcuts import redirect
 from .models import Fcuser
 
