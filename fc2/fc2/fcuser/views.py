@@ -2,6 +2,8 @@ from django import forms
 from django.shortcuts import redirect, render
 from django.views.generic.edit import FormView
 from .forms import RegisterForm, LoginForm
+from .models import Fcuser
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
@@ -13,6 +15,14 @@ class RegisterView(FormView):
     form_class = RegisterForm
     success_url = '/'
 
+    def form_valid(self, form):
+        fcuser = Fcuser(
+            email = form.data.get('email'),
+            password = make_password(form.data.get('password')),
+        )
+        fcuser.save()
+        return super().form_valid(form)
+        
 class LoginView(FormView):
     template_name = 'login.html'
     form_class = LoginForm
