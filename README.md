@@ -281,3 +281,5 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 * form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
 * 정리할것 : 오버라이딩, clean함수, form_valid, form_invalid, django field종류, djnago orm 작성법, djnago view import 종류
+
+## DRF
