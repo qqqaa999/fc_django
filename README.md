@@ -58,6 +58,25 @@ Object는 Class에 의해서 만들어진 물건, 실체를 말함 ex) 자동차
     * 인스턴스는 특정 객체가 어떤 클래스의 객체인지를 관계 위주로 설명할 때 사용
     * 클래스와 구체적인 객체 사이의 관꼐에 초점을 맞추면 인스턴스라는 용어를 사용함
 
+#### 오버라이딩(overriding)
+* 오버라이딩(overriding)이란 상속 관계에 있는 부모 클래스에서 이미 정의된 메소드를 자식 클래스에서 같은 시그니쳐를 갖는 메소드로 다시 정의하는 것이라고 할 수 있음.
+
+    * overriding은 무시하다, 우선하다라는 뜻을 가지고 있는데 그 말 그대로 기반 클래스의 메서드를 무시하고 새로운 메서드를 만든다는 뜻임.
+
+```python
+class Dog:
+    def dog_breed(self):
+        print('개')
+ 
+class Jindo_dog(Dog):
+    def dog_breed(self):
+        print('진돗개')
+ 
+dog_1 = Jindo_dog()
+dog_1.dog_breed()
+
+```
+
 ## 디자인 패턴
 
 #### MVC패턴
@@ -283,8 +302,6 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 * form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
 * 정리할것 : 오버라이딩, clean함수, form_valid, form_invalid, django field종류, djnago orm 작성법, djnago view import 종류
-
-* 오버라이딩이란
 
 * (form단)clean함수
 
