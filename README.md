@@ -329,3 +329,7 @@ class MyModel(models.Model):
     class Meta:
         pass
 ```
+
+* 메타 옵션
+    * db_table : 이 옵션은 데이터베이스 내에서 테이블을 식별하는데 사용해야하는 이름을 설정하는데 사용됨.
+    * ordering : 이 옵션은 모델 필드 인 문자열 값 목록을 사용함. 모델 객체의 순서를 정의하는데 사용됨.
