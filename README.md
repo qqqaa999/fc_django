@@ -335,3 +335,4 @@ class MyModel(models.Model):
     * ordering : 이 옵션은 모델 필드 인 문자열 값 목록을 사용함. 모델 객체의 순서를 정의하는데 사용됨.
     * verbose_name : 이 옵션은 사람이 읽을 수 있는 모델의 단일 이름을 정의하는데 사용되며, Django의 기본 명명 규칙을 덮어씀, admin에도 반영이 됨.
     * verbose_name_plural : 이 옵션은 모델에 대해 사람이 읽을 수 있는 복수형 이름을 정의하는데 사용되며, Django의 기본 명명 규칙을 덮어씀, admin에도 반영이 됨.
+    * Djnago document <https://docs.djangoproject.com/en/3.2/ref/models/options/> 여기서 더 다양한 option을 확인해보자
