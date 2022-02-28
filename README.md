@@ -320,3 +320,12 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 * class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta class는 ModelForm class에 메타데이터를 제공하기 위해 사용됨. 
     * Meta 데이터란 : 메타 데이터는 다른 데이터에 대한 정보를 제공하는 특정 데이터 집합을 나타냄. ex) file이라는데이터가 있다면, 그 file의 '작성자가 누구고, 언제, 어디서 작성이 되었는가' == Meta data
+
+```python
+from django.db import models
+
+class MyModel(models.Model):
+    pass
+    class Meta:
+        pass
+```
