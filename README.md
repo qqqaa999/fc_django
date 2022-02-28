@@ -314,3 +314,9 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 * (view단)form_valid함수, form_invalid함수, djnago view import 종류, get_form_kwargs, get_queryset
 
 * (model단)django field종류, djnago orm 작성법, Meta함수
+
+## Form 정리
+* Form의 기능 : 폼을 통해서 값을 변경 / 검사를 하며, HTML 코드로 랜더링 할 수 있음.
+
+* class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta 클래스는 ModelForm 클래스에 메타데이터를 제공하기 위해 사용됨.
+    * Meta 데이터란 : 데이터에 대한 데이터임. ex) file이라는데이터가 있다면, 그 file의 '작성자가 누구고, 언제, 어디서 작성이 되었는가' 가 메타 데이터 임

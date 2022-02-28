@@ -1,8 +1,4 @@
 from django import forms
-from .models import Order
-from product.models import Product
-from fcuser.models import Fcuser
-from django.db import transaction
 
 class RegisterForm(forms.Form):
     def __init__(self, request, *args, **kwargs):
