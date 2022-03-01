@@ -314,9 +314,13 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 * (view단)form_valid함수, form_invalid함수, djnago view import 종류, get_form_kwargs, get_queryset
 
 * (model단)django field종류, djnago orm 작성법, Meta함수
+## Djnago Routing
+* 접속한 주소에 따라서 적절한 처리 로직을 연결해주는 작업을 라우팅이라고 함.
+* 라우팅을 해주는 도구를 라우터라고 부름. (Django의 라우터는 urls.py임)
+* 장고는 크게 Project 단위와 Application 단위가 존재하며, 하나의 장고 Project는 여러 Application을 가질 수 있는데 이것은 곧 Project 단위의 Routing 관리와 Application 관리가 존재한다는 것을 의미함 그리고 장고는 들어오는 URL 경로를 View로 라우팅하여 요청을 처리함.
 
-## Form 정리
-* Form의 기능 : 폼을 통해서 값을 변경 / 검사를 하며, HTML 코드로 랜더링 할 수 있음.
+## Django Form 정리
+* Django Form의 기능 : 폼을 통해서 값을 수정 / 검사를 하며, HTML 코드로 랜더링 할 수 있음.
 
 * class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta class는 ModelForm class에 메타데이터를 제공하기 위해 사용됨. 
     * Meta 데이터란 : 메타 데이터는 다른 데이터에 대한 정보를 제공하는 특정 데이터 집합을 나타냄. ex) file이라는데이터가 있다면, 그 file의 '작성자가 누구고, 언제, 어디서 작성이 되었는가' == Meta data
