@@ -390,6 +390,17 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
  
 * Django Form 함축적으로 -> 폼을 통해서 값을 수정 / 검사를 하며, HTML 코드로 랜더링 할 수 있음.
 
+#### Django Form의 처리과정
+
+* 장고는 HTTP Request에 대해 아래와 같이 동작함.
+
+1. 뷰가 요청을 받고, 모델로 부터 데이터를 읽는 것을 포함한 요구된 동작을 수행함.
+2. 보여줄 데이터를 포함한 Context를 전달받은 템플릿으로부터 HTML Page를 생성하고 반환함.
+    * 이 때, 장고는 서버/사용자가 입력한 데이터를 처리 가능해야하며, 에러가 있으면 그 페이지를 다시 보여줄 필요가 있음
+
+* Django 요청을 처리하는 플로우 차트 ![Django_HTTP_Request_Flowchart](https://mdn.mozillademos.org/files/14205/Form%20Handling%20-%20Standard.png)
+
+참고(https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Forms#in_this_module)
 #### 
 
 * class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta class는 ModelForm class에 메타데이터를 제공하기 위해 사용됨. 
