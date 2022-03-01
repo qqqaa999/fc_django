@@ -306,20 +306,45 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 ## DRF
 
-* form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
+```python
+"""* form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
 * 정리할것 : 오버라이딩, clean함수, form_valid, form_invalid, django field종류, djnago orm 작성법, djnago view import 종류
 
 * (form단)clean함수
 
 * (view단)form_valid함수, form_invalid함수, djnago view import 종류, get_form_kwargs, get_queryset
 
-* (model단)django field종류, djnago orm 작성법, Meta함수
+* (model단)django field종류, djnago orm 작성법, Meta함수 """
+```
+
 ## Djnago Routing
 * 접속한 주소에 따라서 적절한 처리 로직을 연결해주는 작업을 라우팅이라고 함.
 * 라우팅을 해주는 도구를 라우터라고 부름. (Django의 라우터는 urls.py임)
 * 장고는 크게 Project 단위와 Application 단위가 존재하며, 하나의 장고 Project는 여러 Application을 가질 수 있는데 이것은 곧 Project 단위의 Routing 관리와 Application 관리가 존재한다는 것을 의미함 그리고 장고는 들어오는 URL 경로를 View로 라우팅하여 요청을 처리함.
 
 ## Django Form 정리
+
+#### HTML Form
+* form : HTML에서 적어도 한 개 이상의 type ="submit"인 input 요소를 포함하는 <form>...</form> 태그 사이의 요소들의 집합으로 정의함.
+* HTML form의 속성
+    1. action : Form이 submit될 때 처리가 필요한 데이터를 전달받는 곳의 자원/URL 주소, 미설정시 현재 페이지 URL로 다시 제출됨.
+    2. method : HTTP methond (POST / GET)
+#### Django Form 기능
+1. 사용자가 처음으로 폼을 요청할 때 기본 폼을 보여줌
+    * 폼은 비어있는 필드가 있을 수 있음. ex) 새로운 상품을 등록할 경우
+    * 초기값으로 채워진 필드가 있을 수도 있음. ex) 쇼핑몰에서 상품 구입하기 같은 경우
+    * 이 시점의 폼은 (초기값이 있긴해도) 유저가 입력한 값에 연관되지 않았기에 unbound 상태라고 불림.
+2. 제출 요청으로부터 테이터를 수집하고 그것을 폼에 결합함.
+    * 데이터를 폼에 결합(binding) 한다는 것은 사용자 입력 데이터가 유효성을 위반하는 경우의 에러메시지가 폼을 재표시할 필요가 있을 때 준비 되었단 말임.
+3. 데이터를 다듬어서 유효성을 검증함.
+    * 데이터를 다듬는다는 것은 사용자 입력을 정화(sanitisation)하고 Python 데이터 타입으로 변환하는것.
+        * 정화란 : 악의적인 콘덴츠를 서버로 보낼수도 있는 유효하지 않은 데이터를 제거하는것.
+    * 유효성 검증은 입력된 값이 해당 필드에 적절한 값인지 검사하는것 ex) 데이터가 허용된 범위에 있는 값인지, 너무 짧거나 길지는 않은지 등등
+4. 입력된 어떤 데이터가 유효하지 않다면, 폼을 다시 표시함.
+    * 표시값은 초기값이 아닌 유저 입력값과 에러 메시지를 폼에 표시함
+5. 입력된 모든 데이터가 유효하다면, 요청된 동작을 수행함.
+6. 일단 모든 작업이 완료되었다면 사용자를 새로운 페이지로 보냄
+ 
 * Django Form의 기능 : 폼을 통해서 값을 수정 / 검사를 하며, HTML 코드로 랜더링 할 수 있음.
 
 * class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta class는 ModelForm class에 메타데이터를 제공하기 위해 사용됨. 
