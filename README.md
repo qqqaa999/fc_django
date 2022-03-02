@@ -332,7 +332,7 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 """
 * 정리할것 :  django field종류, djnago orm 작성법, djnago view import 종류
 
-* (view단) djnago view import 종류,
+* (view단) djnago view import 종류(CBV),
 
 * (model단)django field종류, djnago orm 작성법 """
 ```

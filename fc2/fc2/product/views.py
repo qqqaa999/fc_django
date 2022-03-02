@@ -14,7 +14,7 @@ from .serializers import ProductSerializer
 
 # Create your views here.
 
-class ProiductListAPI(generics.GenericAPIView, mixins.ListModelMixin):
+class ProductListAPI(generics.GenericAPIView, mixins.ListModelMixin):
     serializer_class = ProductSerializer
 
     def get_queryset(self):
@@ -22,6 +22,16 @@ class ProiductListAPI(generics.GenericAPIView, mixins.ListModelMixin):
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
+
+class ProductDetailAPI(generics.GenericAPIView, mixins.RetrieveModelMixin):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.all().order_by('id')
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
 
 class ProductList(ListView):
     model = Product
