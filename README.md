@@ -404,13 +404,28 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 #### Django Form 유효성 검사
 
-* clean() : 서로 의존되어 있는 필드들을 위한 커스텀 검증을 추가해야 할 때 clean() 메소드를 사용
+* .clean() : 서로 의존되어 있는 필드들을 위한 커스텀 검증을 추가해야 할 때 clean() 메소드를 사용
 
-* is.valid() : Bound 폼 인스턴스를 가지고, is_vaild()를 호출하여 유효성 검증을 실행하고 데이터의 유효성에 대해 불리언 값을 반환함
+* .is.valid() : Bound 폼 인스턴스를 가지고, is_vaild()를 호출하여 유효성 검증을 실행하고 데이터의 유효성에 대해 불리언 값을 반환함
+    * Bound From이란 Form안에 데이터가 있는 상태를 말함
 
-* form_valid : form이 유효하면 실행됨
+    * def form_valid : form이 유효하면 실행됨 (view 단에서 사용)
 
-* from_invalid : form이 유효하지 않으면 실행됨
+    * def from_invalid : form이 유효하지 않으면 실행됨 (view 단에서 사용)
+
+* .errors : error messages 사전을 가져오기 위한 errors 속성에 엑세스 합니다. 
+
+* .errors.as_data() : 오리지널 ValidationError 인스턴스들을 매핑하는 사전을 반환 합니다. 
+
+* .errors.as_json() : 에러를 직렬화된 JSON 으로 반환합니다. 
+
+* .errors.get_json_data(escape_html=False) : 에러들을 JSON 으로 직렬화하기 좋은 형태의 사전으로 반환합니다. 
+
+* .add_error(field, error) : 특정 필드에 에러를 추가할수 있게 해줍니다. 
+
+* .has_error(field, code=None) : 필드가 특정 코드를 가진 에러를 가지고 있는지 없는지 Boolean을 리턴합니다.
+
+* .non_field_errors() : 특정 필드와 연결되지 않은 Form.errors 로부터 에러의 리스트를 반환합니다.
 
 #### Django Meta Class
 
@@ -438,3 +453,5 @@ class MyModel(models.Model):
     * verbose_name_plural : 이 옵션은 모델에 대해 사람이 읽을 수 있는 복수형 이름을 정의하는데 사용되며, Django의 기본 명명 규칙을 덮어씀, admin에도 반영이 됨.
 
     * Djnago document <https://docs.djangoproject.com/en/3.2/ref/models/options/> 여기서 더 다양한 option을 확인해보자
+
+ 

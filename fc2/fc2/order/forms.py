@@ -23,6 +23,6 @@ class RegisterForm(forms.Form):
         product = cleaned_data.get('product')
         fcuser = self.request.session.get('user')
     
-        if not (quantity and product):
+        if not (quantity and product and fcuser):
             self.add_error('quantity','값이 없습니다.')
             self.add_error('product','값이 없습니다.')
