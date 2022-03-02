@@ -329,14 +329,12 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 ## DRF
 
 ```python
-"""* form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
-* 정리할것 : 오버라이딩, clean함수, form_valid, form_invalid, django field종류, djnago orm 작성법, djnago view import 종류
+"""
+* 정리할것 :  django field종류, djnago orm 작성법, djnago view import 종류
 
-* (form단)clean함수
+* (view단) djnago view import 종류,
 
-* (view단)form_valid함수, form_invalid함수, djnago view import 종류, get_form_kwargs, get_queryset
-
-* (model단)django field종류, djnago orm 작성법, Meta함수 """
+* (model단)django field종류, djnago orm 작성법 """
 ```
 
 ## Djnago Routing
@@ -352,6 +350,8 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 #### HTML Form
 
 * form : HTML에서 적어도 한 개 이상의 type ="submit"인 input 요소를 포함하는 <form>...</form> 태그 사이의 요소들의 집합으로 정의함.
+
+* form은 form 자체를 관리할 코드만 작성 form이 정상적으로 채워졌을 때  view 안에서 form_valid 함수를 이용해서 데이터 저장
 
 * HTML form의 속성
 
@@ -401,7 +401,18 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 * Django 요청을 처리하는 플로우 차트 ![Django_HTTP_Request_Flowchart](https://mdn.mozillademos.org/files/14205/Form%20Handling%20-%20Standard.png)
 
 참고(https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Forms#in_this_module)
-#### 
+
+#### Django Form 유효성 검사
+
+* clean() : 서로 의존되어 있는 필드들을 위한 커스텀 검증을 추가해야 할 때 clean() 메소드를 사용
+
+* is.valid() : Bound 폼 인스턴스를 가지고, is_vaild()를 호출하여 유효성 검증을 실행하고 데이터의 유효성에 대해 불리언 값을 반환함
+
+* form_valid : form이 유효하면 실행됨
+
+* from_invalid : form이 유효하지 않으면 실행됨
+
+#### Django Meta Class
 
 * class Meta : python의 메타 클래스와는 다른 개념이며, django form의 class Meta는 단순히 이름이 Meta인 내부 클래스(inner class)임. Meta class는 ModelForm class에 메타데이터를 제공하기 위해 사용됨. 
 
