@@ -2,25 +2,23 @@
 {% load humanize %}
 {% block header %}
 <script>
-    // function product_detail(id) {
-    //     $.ajax({
-    //         url: "/api/product/" + id,
-    //         success: function (result) {
-    //             $("#product-" + id).popover({
-    //                 html: true,
-    //                 content : "테스트"
-    //             }).popover('show');
-    //         }
-    //     });
-    // }
-    $(document).ready(function () {
+    function product_detail(id) {
         $.ajax({
-            url: "/api/product/",
+            url: "/api/product/" + id,
             success: function (result) {
-               console.log(result);
+                $("#product-" + id).popover({
+                    html: true,
+                    content : result.name + "<br/>" + result.price
+                }).popover('show');
             }
         });
-    });
+    }
+
+    function product_leave(id) {
+        $("#product-" + id).popover('hide');
+    }
+
+    $(document).ready(function () {});
 </script>
 {% endblock %}
 {% block contents %}
@@ -39,7 +37,7 @@
                 {% for product in product_list %}
                 <tr>
                     <th>{{ product.id }}</th>
-                    <th><a id="product-{{ product.id }}" href="/product/{{ product.id }}">{{ product.name }}</a></th>
+                    <th><a id="product-{{ product.id }}" onmouseenter="product_detail({{ product.id }});" onmouseleave="product_leave({{ product.id }});" href="/product/{{ product.id }}">{{ product.name }}</a></th>
                     <th>{{ product.price|intcomma }}원</th>
                     <th>{{ product.register_date|date:'Y-m-d H:i' }}</th>
 
