@@ -374,6 +374,13 @@ def login_required(func): '''데코레이터'''
 * 리소스(resource) : 컴퓨터 시트템에 관한 여러 가지의 자원을 총징함 <https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%86%8C%EC%8A%A4>
 * URI vs URL <https://blog.naver.com/wishket/222475083068>
 
+#### RESTful
+
+* RESTful : REST의 원리를 따르는 시스템을 의미함, 하지만 REST를 사용했다고 하여 모두가 RESTful 한 것은 아님
+    * REST API의 설계 규칙을 올바르게 지킨 시스템을 RESTful하다 말할 수 있으며, 모든 CRUD 기능을 POST로 처리 하는 API 혹은 URI 규칙을 올바르게 지키지 않은 API는 REST API의 설계 규칙을 올바르게 지키지 못한 시스템은 REST API를 사용하였지만 RESTful 하지 못한 시스템 이라고 할 수 있음
+
+    * 즉 REST API의 설계 규칙을 올바르게 지킨 시스템을 말함.
+
 References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 ## DRF
