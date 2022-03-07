@@ -272,6 +272,19 @@ DateField : 파이썬의 datetime.date 인스턴스로 표시되는 날짜의 �
         4. Entity는 하나 이상의 식별자(UIDL Unique ldentifier)를 가져야 하며, UID가 없다면 Entity가 아님
         5. ER diagram 작성 시, 관계를 표현할 때에는 어떤 entity가 "주"인가를 잘 따져서 표현해야함
 
+#### Django User 모델 확장
+
+* 장고 내장 User 모델을 잘 사용했지만 장고의 내장 User 모델을 내 입맛대로 커스텀 하기 위해서 확장시킴
+
+* 확장 방법
+    1. proxy model 사용
+        * 새 테이블을 추가하는 등의 DB 스키마의 변경 없이 단순히 상속한 클래스임
+            * 스키마 : 데이터베이스 구조와 전반적인 제약조건에 관한 명세를 기술한 것
+    2. 하나의 모델을 정의 후, User모델과 One-to-One 관계 형성
+    3. AbstractBaseUser
+        * 내장 유저 모델을 완전 처음부터 새로 만듬
+    4. AbstractUser
+        * 내장 유저 모델을 사용하는데 부분적으로 수정
 ## Decorator
 
 * 함수를 Wrapping 즉, 어떤 함수를 받아 명령을 추가한 뒤 이를 다시 함수의 형태로 반환하는 함수(말 그대로 다른 함수를 꾸며주는 함수임)
@@ -541,5 +554,3 @@ class MyModel(models.Model):
     * verbose_name_plural : 이 옵션은 모델에 대해 사람이 읽을 수 있는 복수형 이름을 정의하는데 사용되며, Django의 기본 명명 규칙을 덮어씀, admin에도 반영이 됨.
 
     * Djnago document <https://docs.djangoproject.com/en/3.2/ref/models/options/> 여기서 더 다양한 option을 확인해보자
-
- 
