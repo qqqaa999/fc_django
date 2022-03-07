@@ -204,6 +204,21 @@ dog_1.dog_breed()
 
 * 각 테이블 간에 연결하기 위해서 특정 테이블에서 다른 테이블의 참조되는 기본키를 외래키라고 함.
 
+#### Django Field types
+
+CharField : 작은 문자열 또는 큰 문자열을 위한 스트링(문자열) 필드
+TextField : 큰 문자열 필드
+IntegerField : 정수 필드(-214748648 ~ 21487483647 범위)
+FloatField : 실수(real numbers) 필드
+BooleanField : True/False 필드
+DatetimeField : 날짜와 시간을 가지는 필드
+FileField : 파일 업로드 필드
+EmailField : EmailValidator를 사용해서 값이 유효한 email인지 체크하는 CharField
+ImageField : 이미지 파일인지 유효성 체크해주며, FileField의 파생 클래스임
+DecimalField : 소숫점을 갖는 필드
+AutoField : 1부터 시작해서 1씩 증가하기 때문에 IntegerField라고 봐도 무방함, AutoField로 pk필드가 자동으로 추가된다
+DateField : 파이썬의 datetime.date 인스턴스로 표시되는 날짜의 필드 타입. class DateField(auto_now=False,auto_now_add=False,**options)
+
 #### 일대일 관계(One-to-One)
 * 일대일 관계는 첫번쨰 테이블의 단일 레코드가 두번쨰 테이블의 하나의 레코드와 관련이 되어있으며, 두번쨰 테이블의 단일 레코드가 첫번째 테이블의 레코드 하나와만 관련이 있을 경우 사용됨. 
     * EX) 1번 테이블에 고객의 신체정보 2번 테이블에 고객의 재무정보 3번 테이블에 고객의 취미정보를 저장하면 고객 번호에 대한 일대일 관계가 형성 됨.
