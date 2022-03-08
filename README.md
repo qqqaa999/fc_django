@@ -505,7 +505,12 @@ References <https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html>
 
 #### Django Form 유효성 검사
 
-* .clean() : 서로 의존되어 있는 필드들을 위한 커스텀 검증을 추가해야 할 때 clean() 메소드를 사용
+* .clean()
+    1. 서로 의존되어 있는 필드들을 위한 커스텀 검증을 추가해야 할 때 clean() 메소드를 사용
+    2. 한번에 둘 이상의 필드에 대한 유효성 검사를 수행하는데 사용함
+    3. 유효성 검사후 데이터를 받음.
+
+* .clean_fieldname : 특정한 필드의 유효성 검사를 할 때 사용함.
 
 * .is.valid() : Bound 폼 인스턴스를 가지고, is_vaild()를 호출하여 유효성 검증을 실행하고 데이터의 유효성에 대해 불리언 값을 반환함
     * Bound From이란 Form안에 데이터가 있는 상태를 말함
