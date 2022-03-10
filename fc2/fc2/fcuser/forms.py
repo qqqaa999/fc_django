@@ -1,5 +1,4 @@
 from django import forms
-from django.db.models.fields import CharField
 from .models import Fcuser
 from django.contrib.auth.hashers import check_password
 
